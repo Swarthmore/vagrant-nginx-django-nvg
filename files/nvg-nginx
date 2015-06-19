@@ -1,0 +1,17 @@
+server {
+
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+    server_name localhost;
+
+    root /srv/apps/nvg;
+
+    location /static {
+        alias /srv/apps/nvg/static;
+    }
+
+    location / {
+        include /srv/apps/nvg/uwsgi_params;
+        uwsgi_pass unix:/run/uwsgi/app/nvg/nvg.sock;
+    }
+}

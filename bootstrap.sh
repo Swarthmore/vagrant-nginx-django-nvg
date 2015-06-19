@@ -3,7 +3,7 @@
 # ridiculously simple shell provisioning
 
 # project name
-PROJECT="iceland"
+PROJECT="nvg"
 
 # array of debian packages to install
 APTGET_INSTALL=(  "nginx"
